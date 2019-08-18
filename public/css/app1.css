@@ -1,0 +1,74 @@
+#app {
+  width: 100%;
+  height: 100%;
+}
+#app .header {
+  width: 100%;
+}
+#app .header .head {
+  position: relative;
+  width: 100%;
+}
+#app .header .head .head-item {
+  height: 40px;
+}
+#app .header .head .head-item .icon-fangdajing1 {
+  position: absolute;
+  top: 10px;
+  left: 52px;
+  font-size: 22px;
+  color: #666;
+  z-index: 100;
+}
+#app .header .head .head-item input[type="text"] {
+  height: 30px;
+  position: absolute;
+  top: 6px;
+  left: 13px;
+  font-size: 14px;
+  width: 350px;
+  text-align: center;
+  border-radius: 7px;
+  background-color: #eee;
+}
+#app .header .head .line {
+  height: 5px;
+  width: 100%;
+  background-color: #eee;
+}
+#app .middle {
+  display: flex;
+}
+#app .middle .left {
+  width: 320px;
+  margin: 11px 1px;
+}
+#app .middle .left .item {
+  font-size: 14px;
+  color: #666;
+  padding: 17px;
+}
+#app .right {
+  flex-direction: column;
+}
+#app .right .photo .up {
+  width: 100%;
+  height: 100px;
+  margin: 11px -17px;
+}
+#app .content {
+  display: flex;
+  flex-wrap: wrap;
+  color: #333;
+}
+#app .content .contentItem {
+  width: 100px;
+  height: 100px;
+}
+#app .content .contentItem .down {
+  width: 70px;
+  height: 70px;
+}
+#app .content .contentItem span {
+  font-size: 12px;
+}

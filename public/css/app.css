@@ -1,0 +1,309 @@
+html body {
+  width: 100%;
+  height: 100%;
+}
+#app .header {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  background-color: #fff;
+  z-index: 100;
+}
+#app .header .head {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 48px;
+  background: #fff;
+  justify-content: space-between;
+}
+#app .header .head .logo img {
+  height: 20px;
+  padding: 5px;
+}
+#app .header .middle {
+  height: 34px;
+  text-align: center;
+  position: relative;
+}
+#app .header .middle .middle-input {
+  display: flex;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  height: 23px;
+  background-color: #eee;
+}
+#app .header .middle .middle-input span {
+  font-size: 14px;
+}
+#app .header .right {
+  width: 40px;
+}
+#app .header .right .btn {
+  font-size: 12px;
+  color: #b4282d;
+  border: 1px solid #b4282d;
+  border-radius: 5px;
+  background-color: #fff;
+}
+#app .header .right .btn span {
+  font-size: 10px;
+  color: #666;
+  padding: 41px;
+}
+#app .header .right input[type="text"] {
+  width: 235px;
+  height: 22px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 22px;
+  margin-top: -35px;
+}
+#app .header .right .iconfont {
+  position: absolute;
+  top: 4px;
+  left: 18px;
+}
+#app .header .nav {
+  display: flex;
+  height: 16px;
+  width: 100%;
+  justify-content: space-around;
+}
+#app .header .tabWrap {
+  display: flex;
+  margin: -12px;
+}
+#app .header .tabWrap .active {
+  color: #f00;
+  border-bottom: 1px solid #f00;
+}
+#app .header .tabWrap li {
+  font-size: 14px;
+  padding: 16px;
+}
+#app .header .icon-xiala {
+  width: 20px;
+  height: 20px;
+  font-size: 23px;
+  color: #eee;
+}
+.content .swper {
+  margin-top: 63px;
+  width: 100%;
+  position: relative;
+  height: 222px;
+}
+.content .swper img {
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  top: 14px;
+  left: 0px;
+}
+.content .grow {
+  width: 100%;
+  height: 30px;
+  margin: 13px right bottom left;
+}
+.content .grow .grow-w {
+  display: flex;
+  justify-content: space-around;
+}
+.content .grow .grow-w flex-del span,
+.content .grow .grow-w .item span {
+  font-size: 13px;
+  color: #666;
+}
+.content .grow .grow-w flex-del .iconfont,
+.content .grow .grow-w .item .iconfont {
+  color: #f00;
+}
+.content .shop {
+  height: 170px;
+  width: 100%;
+}
+.content .shop .shop-all {
+  display: flex;
+  margin: 9px;
+  width: 100%;
+  height: 70px;
+}
+.content .shop .shop-all .shopItem {
+  width: 20%;
+}
+.content .shop .shop-all .shopItem img {
+  width: 60px;
+  height: 60px;
+}
+.content .shop .shop-all .shopItem span {
+  font-size: 13px;
+}
+.content .fixed img {
+  width: 100%;
+  height: 65px;
+}
+.content .middle {
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+.content .middle .middleItem {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+.content .middle .middleItem .item {
+  width: 49%;
+  height: 125px;
+  background: #eee;
+}
+.content .middle .middleItem .item .pItem-one {
+  font-size: 16px;
+  color: #333;
+  margin: 8px;
+}
+.content .middle .middleItem .item .pItem {
+  font-size: 12px;
+  color: #7f7f7f;
+}
+.content .middle .middleItem img {
+  width: 70px;
+  height: 80px;
+}
+.content .person {
+  width: 100%;
+}
+.content .person p {
+  font-size: 17px;
+  color: #333;
+  text-align: left;
+  margin: 8px 15px;
+}
+.content .person .personAll {
+  display: flex;
+}
+.content .person .personAll .personItem {
+  margin: 5px;
+  width: 29%;
+}
+.content .person .personAll .item {
+  background: #eee;
+}
+.content .person .personAll .item img {
+  height: 115px;
+}
+.content .person .personAll .item p {
+  font-size: 14px;
+  text-align: left;
+}
+.content .person .personAll .text {
+  font-size: 12px;
+}
+.content .person .personAll .paric {
+  font-size: 12px;
+  color: #f00;
+}
+.content .person .kong {
+  height: 10px;
+  width: 100%;
+  background: #eee;
+}
+.content .time {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 6px;
+}
+.content .time .left {
+  display: flex;
+}
+.content .time .left span {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  background-color: #000;
+  margin: 0 7px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 20px;
+}
+.content .time .left p {
+  font-size: 15px;
+  margin: 0 12px;
+  color: #333;
+}
+.content .time .right {
+  display: flex;
+}
+.content .time .right p {
+  color: #333;
+  font-size: 13px;
+}
+.content .time .right .itemp {
+  padding: 1px 10px;
+}
+.content .photo .photoItem {
+  display: flex;
+  flex-wrap: wrap;
+}
+.content .photo .photoItem .item {
+  margin: 10px 9px;
+}
+.content .photo .photoItem .item .price {
+  display: flex;
+  margin: 0 25px;
+}
+.content .photo .photoItem .item .price p {
+  color: #f00;
+  font-size: 15px;
+}
+.content .photo .photoItem .item .price del {
+  font-size: 12px;
+  color: #666;
+}
+.content .photo .photoItem .item img {
+  width: 107px;
+  height: 107px;
+  background: #eee;
+}
+.content .photo .kong {
+  height: 10px;
+  width: 100%;
+  background: #eee;
+}
+.footer {
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+}
+.footer .line {
+  height: 3px;
+  width: 100%;
+  background: #eee;
+}
+.footer .footer-all {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 40px;
+}
+.footer .footer-all .item {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin: 0 18px;
+}
+.footer .footer-all .item .icon-xiaofangzi {
+  font-size: 21px;
+  color: #f00;
+  font-weight: 700;
+}
+.footer .footer-all .item span {
+  font-size: 14px;
+  color: #666;
+}
