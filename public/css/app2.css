@@ -86,34 +86,37 @@
 .paper {
   display: flex;
 }
-.paper .paperItem .item {
+.paper .paperItem {
+  margin: 1px -8px;
+}
+.paper .item {
   width: 102px;
   height: 100px;
   margin: 6px 10px;
   border-radius: 5px;
 }
-.paper .paperItem .bag {
+.paper .bag {
   font-size: 13px;
   color: #666;
   padding: 1px 16px;
 }
-.paper .paperItem .new {
+.paper .new {
   color: #ffa500;
   font-size: 12px;
   border: 1px solid;
   margin: 1px 19px;
 }
-.paper .paperItem .money {
+.paper .money {
   display: flex;
 }
-.paper .paperItem .money .paric {
+.paper .money .paric {
   color: #f00;
   font-weight: 700;
   font-size: 15px;
   display: block;
   padding: 2px 16px;
 }
-.paper .paperItem .money .old {
+.paper .money .old {
   font-size: 12px;
   line-height: 12px;
   color: #9b9b9b;
@@ -128,4 +131,25 @@
   margin: 3px 12px;
   border-radius: 10px;
   border: 1px solid;
+}
+.more {
+  width: 30px;
+  height: 50px;
+  color: #ffc0cb;
+}
+.more .look {
+  color: #7e8c8d;
+  text-decoration: none;
+  color: #fff;
+  background-color: #008000;
+  border-radius: 5px;
+  width: 47px;
+  height: 176px;
+  display: inline-block;
+  text-align: center;
+  margin: 9px 3px;
+}
+.spring {
+  width: 100%;
+  height: 90px;
 }

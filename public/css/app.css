@@ -2,14 +2,13 @@ html body {
   width: 100%;
   height: 100%;
 }
-#app .header {
-  width: 100%;
-  position: fixed;
-  top: 0px;
-  background-color: #fff;
-  z-index: 100;
-}
-#app .header .head {
+#app .header,
+#app width 100%,
+#app position fixed,
+#app top 0px,
+#app background-color #fff,
+#app z-index 100,
+#app .head {
   display: flex;
   align-items: center;
   width: 100%;
@@ -17,41 +16,88 @@ html body {
   background: #fff;
   justify-content: space-between;
 }
-#app .header .head .logo img {
+#app .header .logo img,
+#app width 100% .logo img,
+#app position fixed .logo img,
+#app top 0px .logo img,
+#app background-color #fff .logo img,
+#app z-index 100 .logo img,
+#app .head .logo img {
   height: 20px;
-  padding: 5px;
 }
-#app .header .middle {
+#app .header .logo img padding 5px .middle,
+#app width 100% .logo img padding 5px .middle,
+#app position fixed .logo img padding 5px .middle,
+#app top 0px .logo img padding 5px .middle,
+#app background-color #fff .logo img padding 5px .middle,
+#app z-index 100 .logo img padding 5px .middle,
+#app .head .logo img padding 5px .middle {
   height: 34px;
   text-align: center;
   position: relative;
 }
-#app .header .middle .middle-input {
+#app .header .logo img padding 5px .middle .middle-input,
+#app width 100% .logo img padding 5px .middle .middle-input,
+#app position fixed .logo img padding 5px .middle .middle-input,
+#app top 0px .logo img padding 5px .middle .middle-input,
+#app background-color #fff .logo img padding 5px .middle .middle-input,
+#app z-index 100 .logo img padding 5px .middle .middle-input,
+#app .head .logo img padding 5px .middle .middle-input {
   display: flex;
   border: 1px solid #eee;
   border-radius: 5px;
   height: 23px;
   background-color: #eee;
 }
-#app .header .middle .middle-input span {
+#app .header .logo img padding 5px .middle .middle-input span,
+#app width 100% .logo img padding 5px .middle .middle-input span,
+#app position fixed .logo img padding 5px .middle .middle-input span,
+#app top 0px .logo img padding 5px .middle .middle-input span,
+#app background-color #fff .logo img padding 5px .middle .middle-input span,
+#app z-index 100 .logo img padding 5px .middle .middle-input span,
+#app .head .logo img padding 5px .middle .middle-input span {
   font-size: 14px;
 }
-#app .header .right {
+#app .header .logo img padding 5px .right,
+#app width 100% .logo img padding 5px .right,
+#app position fixed .logo img padding 5px .right,
+#app top 0px .logo img padding 5px .right,
+#app background-color #fff .logo img padding 5px .right,
+#app z-index 100 .logo img padding 5px .right,
+#app .head .logo img padding 5px .right {
   width: 40px;
 }
-#app .header .right .btn {
+#app .header .logo img padding 5px .right .btn,
+#app width 100% .logo img padding 5px .right .btn,
+#app position fixed .logo img padding 5px .right .btn,
+#app top 0px .logo img padding 5px .right .btn,
+#app background-color #fff .logo img padding 5px .right .btn,
+#app z-index 100 .logo img padding 5px .right .btn,
+#app .head .logo img padding 5px .right .btn {
   font-size: 12px;
   color: #b4282d;
   border: 1px solid #b4282d;
   border-radius: 5px;
   background-color: #fff;
 }
-#app .header .right .btn span {
+#app .header .logo img padding 5px .right .btn span,
+#app width 100% .logo img padding 5px .right .btn span,
+#app position fixed .logo img padding 5px .right .btn span,
+#app top 0px .logo img padding 5px .right .btn span,
+#app background-color #fff .logo img padding 5px .right .btn span,
+#app z-index 100 .logo img padding 5px .right .btn span,
+#app .head .logo img padding 5px .right .btn span {
   font-size: 10px;
   color: #666;
   padding: 41px;
 }
-#app .header .right input[type="text"] {
+#app .header .logo img padding 5px .right input[type="text"],
+#app width 100% .logo img padding 5px .right input[type="text"],
+#app position fixed .logo img padding 5px .right input[type="text"],
+#app top 0px .logo img padding 5px .right input[type="text"],
+#app background-color #fff .logo img padding 5px .right input[type="text"],
+#app z-index 100 .logo img padding 5px .right input[type="text"],
+#app .head .logo img padding 5px .right input[type="text"] {
   width: 235px;
   height: 22px;
   border-radius: 5px;
@@ -59,30 +105,66 @@ html body {
   line-height: 22px;
   margin-top: -35px;
 }
-#app .header .right .iconfont {
+#app .header .logo img padding 5px .right .iconfont,
+#app width 100% .logo img padding 5px .right .iconfont,
+#app position fixed .logo img padding 5px .right .iconfont,
+#app top 0px .logo img padding 5px .right .iconfont,
+#app background-color #fff .logo img padding 5px .right .iconfont,
+#app z-index 100 .logo img padding 5px .right .iconfont,
+#app .head .logo img padding 5px .right .iconfont {
   position: absolute;
   top: 4px;
   left: 18px;
 }
-#app .header .nav {
+#app .header .logo img padding 5px .nav,
+#app width 100% .logo img padding 5px .nav,
+#app position fixed .logo img padding 5px .nav,
+#app top 0px .logo img padding 5px .nav,
+#app background-color #fff .logo img padding 5px .nav,
+#app z-index 100 .logo img padding 5px .nav,
+#app .head .logo img padding 5px .nav {
   display: flex;
   height: 16px;
   width: 100%;
   justify-content: space-around;
 }
-#app .header .tabWrap {
+#app .header .logo img padding 5px .tabWrap,
+#app width 100% .logo img padding 5px .tabWrap,
+#app position fixed .logo img padding 5px .tabWrap,
+#app top 0px .logo img padding 5px .tabWrap,
+#app background-color #fff .logo img padding 5px .tabWrap,
+#app z-index 100 .logo img padding 5px .tabWrap,
+#app .head .logo img padding 5px .tabWrap {
   display: flex;
   margin: -12px;
 }
-#app .header .tabWrap .active {
+#app .header .logo img padding 5px .tabWrap .active,
+#app width 100% .logo img padding 5px .tabWrap .active,
+#app position fixed .logo img padding 5px .tabWrap .active,
+#app top 0px .logo img padding 5px .tabWrap .active,
+#app background-color #fff .logo img padding 5px .tabWrap .active,
+#app z-index 100 .logo img padding 5px .tabWrap .active,
+#app .head .logo img padding 5px .tabWrap .active {
   color: #f00;
   border-bottom: 1px solid #f00;
 }
-#app .header .tabWrap li {
+#app .header .logo img padding 5px .tabWrap li,
+#app width 100% .logo img padding 5px .tabWrap li,
+#app position fixed .logo img padding 5px .tabWrap li,
+#app top 0px .logo img padding 5px .tabWrap li,
+#app background-color #fff .logo img padding 5px .tabWrap li,
+#app z-index 100 .logo img padding 5px .tabWrap li,
+#app .head .logo img padding 5px .tabWrap li {
   font-size: 14px;
   padding: 16px;
 }
-#app .header .icon-xiala {
+#app .header .logo img padding 5px .icon-xiala,
+#app width 100% .logo img padding 5px .icon-xiala,
+#app position fixed .logo img padding 5px .icon-xiala,
+#app top 0px .logo img padding 5px .icon-xiala,
+#app background-color #fff .logo img padding 5px .icon-xiala,
+#app z-index 100 .logo img padding 5px .icon-xiala,
+#app .head .logo img padding 5px .icon-xiala {
   width: 20px;
   height: 20px;
   font-size: 23px;
@@ -244,31 +326,38 @@ html body {
 .content .time .right .itemp {
   padding: 1px 10px;
 }
-.content .photo .photoItem {
+.content .photo,
+.content .photoItem {
   display: flex;
   flex-wrap: wrap;
 }
-.content .photo .photoItem .item {
+.content .photo .item,
+.content .photoItem .item {
   margin: 10px 9px;
 }
-.content .photo .photoItem .item .price {
+.content .photo .item .price,
+.content .photoItem .item .price {
   display: flex;
   margin: 0 25px;
 }
-.content .photo .photoItem .item .price p {
+.content .photo .item .price p,
+.content .photoItem .item .price p {
   color: #f00;
   font-size: 15px;
 }
-.content .photo .photoItem .item .price del {
+.content .photo .item .price del,
+.content .photoItem .item .price del {
   font-size: 12px;
   color: #666;
 }
-.content .photo .photoItem .item img {
+.content .photo .item img,
+.content .photoItem .item img {
   width: 107px;
   height: 107px;
   background: #eee;
 }
-.content .photo .kong {
+.content .photo .item .kong,
+.content .photoItem .item .kong {
   height: 10px;
   width: 100%;
   background: #eee;
