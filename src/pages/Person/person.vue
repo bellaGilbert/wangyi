@@ -2,17 +2,17 @@
   <div>
     <div class="header">
         <div class="head">
-          <a href="##" class="left">
+          <a href="##" class="left" @click="toGo">
               <i class="iconfont icon-xiaofangzi"></i>
           </a>
           <a href="##" class="middle">
               <img src="../../../public/images/aa.png" alt="">
           </a>
           <div>
-          <a href="##" class="right"> 
+          <a href="##" class="right" @click="small('/search')"> 
               <i class="iconfont icon-fangdajing2"></i>                        
           </a>
-          <a href="##" class="right">
+          <a href="##" class="right" @click="shop">
             <i class="iconfont icon-dagouwuche"></i>                        
           </a>
            </div>
@@ -20,11 +20,11 @@
         <div class="content">
           <img src="https://yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt=""> 
         </div>
-        <div class="phone">
+        <div class="phone" @click="number('/number')">
           <i class="iconfont icon-shouji"></i>
           <span class="num">手机号快捷登录</span>
         </div>
-        <div class="mail">
+        <div class="mail" @click="email('/email')">
           <i class="iconfont icon-youxiang-copy"></i>
           <span class="num">邮箱账号登录</span>
         </div>
@@ -32,7 +32,39 @@
   </div>
 </template>
 <script type="text/ecmascript-6">
+import Search from '../Search/Search'
   export default {
+    data(){
+      return{
+        home :true,
+        isShop:true
+    }
+    },
+     
+    methods:{
+      toGo(){
+        console.log(123)
+        this.$router.push('/first')
+      },
+      shop(){
+        console.log(333)
+        this.$router.push('/car')
+      },
+      small(path){
+        console.log(1111)
+        this.$router.push(path)
+      },
+      number(path){
+        this.$router.push(path)
+      },
+      email(path){
+        this.$router.push(path)
+      }     
+    },
+     components:{
+        Search
+      }
+   
   }
 </script>
 

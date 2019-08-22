@@ -7,12 +7,12 @@
 							<img src="../../../public/images/aa.png" alt="">
 					</a>
 					<div class="middle1">            
-					<div class="middle-input">
+					<div class="middle-input" @click="del">
 						<div class="iconfont icon-fangdajing2"></div>
 						<span>搜索商品，共21613款好物</span>
 					</div>  
 					</div>
-					<div class="right">
+					<div class="right" @click="login">
 							<button class="btn">登录</button> 
 					</div>       
 			</div> 
@@ -27,11 +27,12 @@
 							<li class="navItem">美食酒水</li>
 							<li class="navItem">美食酒水</li>            
 							<li class="navItem">美食酒水</li>
-							<li class="navItem">美食酒水</li>            
-
-							<i class="iconfont icon-xiala"></i>            
+							<li class="navItem">美食酒水</li> 
 					</ul>
-				
+					<div class="kkk">
+						<i class="iconfont icon-xiala"></i>	
+					</div>					
+					<div class="ty" v-show="isShow">jjjjjjjjjjjjjj</div>
 			</div>
 	</div>
 	<div class="content">       
@@ -39,72 +40,23 @@
 				<Swper/> 
 		<!-- 三个标志 -->
 		<div class="grow">
-				<ul class="grow-w">
-						<li class="item">
+				<ul class="grow-w" >
+						<li class="item" v-for="(item, index) in homeArr" :key="index">
 								<a href="##">
 										<i class="iconfont icon-wangyi2"></i>
-										<span>网易自营品牌</span>
+										<span>{{item.desc}}</span>
 								</a>    
 						</li>
-						<li class="item">
-								<a href="">
-										<i class="iconfont icon-duihao"></i>
-										<span>30天无忧退货</span>
-								</a>    
-						</li>
-						<li class="item">
-								<a href="">
-										<i class="iconfont icon-qian"></i>
-										<span>48小时快速退款</span>
-								</a>    
-						</li>
+					
 				</ul>
 		</div> 
 		<!-- 商品分类 -->
 		<div class="shop">
-				<ul class="shop-all">
-						<li class="shopItem">
-								<img src="https://yanxuan.nosdn.127.net/5243a7191dd4c86b3b28859089273aa8.gif">
-								<span>新品发布</span>
-						</li>
-						<li class="shopItem">
-										<img src="https://yanxuan.nosdn.127.net/fede8b110c502ec5799702d5ec824792.png">
-										<span>居家生活</span>
-						</li>
-						<li class="shopItem">
-								<img src="https://yanxuan.nosdn.127.net/2415a74cea7d3f080c2dcaa791884572.png">
-								<span>服饰箱包</span>
-						</li>
-						<li class="shopItem">
-								<img src="https://yanxuan.nosdn.127.net/d916591adea776351e084016335e5820.png">
-								<span>美食酒水</span>
-						</li>
-						<li class="shopItem">
-								<img src="https://yanxuan.nosdn.127.net/6c3bd9d885c818b1f73e497335a68b47.png">
-								<span>个护清洁</span>
-						</li>
-				</ul>
-				<ul class="shop-all">
-								<li class="shopItem">
-										<img src="https://yanxuan.nosdn.127.net/559d2a240ec20b096590a902217009ff.png">
-										<span>母婴亲子</span>
-								</li>
-								<li class="shopItem">
-												<img src="https://yanxuan.nosdn.127.net/5c088559ebcc3f0ffcda663f04dfbeb2.png">
-												<span>运动旅行</span>
-								</li>
-								<li class="shopItem">
-										<img src="https://yanxuan.nosdn.127.net/fbca8e1f2948f0c09fc7672c2c125384.png">
-										<span>数码家电</span>
-								</li>
-								<li class="shopItem">
-										<img src="https://yanxuan.nosdn.127.net/f7281169d4e82d5d8d52aa1fec83fe01.png">
-										<span>全球特色</span>
-								</li>
-								<li class="shopItem">
-										<img src="http://yanxuan.nosdn.127.net/3954c3cbeb4359dd7007be7a076e0dda.gif">
-										<span>超级会员</span>
-								</li>
+				<ul class="shop-all" v-if="kingKongModule">
+						<li class="shopItem" v-for="(item, index) in kingKongModule.kingKongList" :key="index">							
+								<img :src="item.picUrl">
+								<span>{{item.text}}</span>
+						</li>				
 				</ul>
 		</div>  
 		<!-- 固定图片 -->
@@ -153,26 +105,12 @@
 				<p>私人定制</p>
 				<div class="personAll">
 						<ul class="personItem">
-										<li class="item">
-												<img src="https://yanxuan-item.nosdn.127.net/9d581d4ec02cf86ff2a05cf81868f159.png?imageView&quality=65&thumbnail=330x330" alt="">
-										</li>
-										<span class="text">浓缩即食燕窝70克...</span>
-										<span class="paric">328￥</span>
-						</ul>
-						<ul class="personItem">
-								<li class="item">
-										<img src="https://yanxuan-item.nosdn.127.net/9d581d4ec02cf86ff2a05cf81868f159.png?imageView&quality=65&thumbnail=330x330" alt="">
-								</li>
-						<span class="text">浓缩即食燕窝70克.......</span>
-						<span class="paric">328￥</span>
-						</ul>
-						<ul class="personItem">
-								<li class="item">
-										<img src="https://yanxuan-item.nosdn.127.net/9d581d4ec02cf86ff2a05cf81868f159.png?imageView&quality=65&thumbnail=330x330" alt="">
-								</li>
-								<span class="text">浓缩即食燕窝70克缩即食燕缩即食燕</span>
-								<span class="paric">328￥</span>                        
-						</ul>                  
+							<li class="item"  v-for="(item, index) in isPerson" :key="index">
+									<img :src="item.listPicUrl" alt="">
+									<span class="text">{{item.simpleDesc}}</span>
+									<span class="paric">{{item.counterPrice}}</span>
+							</li>
+						</ul>           
 					</div>              
 				<div class="kong"> </div> 
 		</div>
@@ -192,48 +130,14 @@
 					</div>
 				<div class="photo">
 						<ul class="photoItem">
-								<li class="item">
-										<img src="https://yanxuan-item.nosdn.127.net/e2af336789e2462f16efc9c2c0e19e48.png?imageView&thumbnail=216x216&quality=75">
+								<li class="item" v-for="(item, index) in first" :key="index">
+										<img :src="item.picUrl">
 										<div class="price">
-												<p>￥30 </p>
-												<del>66.5</del>
+												<p>{{item.activityPrice}} </p>
+												<del>{{item.originPrice}}</del>
 										</div>                            
 								</li>
-								<li class="item">
-										<img src="https://yanxuan-item.nosdn.127.net/e2af336789e2462f16efc9c2c0e19e48.png?imageView&thumbnail=216x216&quality=75">
-										<div class="price">
-												<p>￥30 </p>
-												<del>66.5</del>
-										</div>                            
-								</li>
-								<li class="item">
-										<img src="https://yanxuan-item.nosdn.127.net/e2af336789e2462f16efc9c2c0e19e48.png?imageView&thumbnail=216x216&quality=75">
-										<div class="price">
-												<p>￥30 </p>
-												<del>66.5</del>
-										</div>                            
-									</li>
-								<li class="item">
-										<img src="https://yanxuan-item.nosdn.127.net/e2af336789e2462f16efc9c2c0e19e48.png?imageView&thumbnail=216x216&quality=75">
-										<div class="price">
-												<p>￥30 </p>
-												<del>66.5</del>
-										</div>                            
-									</li>
-								<li class="item">
-										<img src="https://yanxuan-item.nosdn.127.net/e2af336789e2462f16efc9c2c0e19e48.png?imageView&thumbnail=216x216&quality=75">
-										<div class="price">
-												<p>￥30 </p>
-												<del>66.5</del>
-										</div>                            
-								</li>
-								<li class="item">
-										<img src="https://yanxuan-item.nosdn.127.net/e2af336789e2462f16efc9c2c0e19e48.png?imageView&thumbnail=216x216&quality=75">
-										<div class="price">
-												<p>￥30 </p>
-												<del>66.5</del>
-										</div>                            
-								</li>
+							
 						</ul>
 						<div class="kong"></div>
 				</div>       
@@ -251,41 +155,14 @@
 				</div>
 			<div class="photo">
 					<ul class="photoItem">
-							<li class="item">
-									<img src="https://yanxuan-item.nosdn.127.net/4a40896fe879f999e370da8fd3619511.png?imageView&quality=65&thumbnail=330x330">
+							<li class="item" v-for="(item, index) in isNewShop" :key="index">
+									<img :src="item.primaryPicUrl">
 									<div class="price">
-											<p>￥30 </p>
-											<del>66.5</del>
+											<p>{{item.name}}</p>
+											<p>￥{{item.counterPrice}}</p>
 									</div>                            
 							</li>
-							<li class="item">
-									<img src="https://yanxuan.nosdn.127.net/ae8c3cda95b2a807d0b8518f7145eda4.png?imageView&quality=65&thumbnail=330x330">
-									<div class="price">
-											<p>￥30 </p>
-											<del>66.5</del>
-									</div>                            
-							</li>
-							<li class="item">
-									<img src="https://yanxuan-item.nosdn.127.net/f26a286cd4c26e7b1e33b844b494a908.png?imageView&thumbnail=216x216&quality=75">
-									<div class="price">
-											<p>￥30 </p>
-											<del>66.5</del>
-									</div>                            
-									</li>
-							<li class="item">
-									<img src="https://yanxuan-item.nosdn.127.net/f0fb8d25330a9287c4ceed84d1054f1b.png?imageView&quality=65&thumbnail=330x330">
-									<div class="price">
-											<p>￥30 </p>
-											<del>66.5</del>
-									</div>                            
-									</li>
-							<li class="item">
-									<img src="https://yanxuan-item.nosdn.127.net/d6a3ff3894437578b137ccbd6be32132.png?imageView&quality=65&thumbnail=330x330">
-									<div class="price">
-											<p>￥30 </p>
-											<del>66.5</del>
-									</div>                            
-							</li>
+						
 							<li class="item">
 									<img src="https://yanxuan-item.nosdn.127.net/6754e5a5ea2005b11849d42e7f27ce3d.png?imageView&quality=65&thumbnail=330x330">
 									<div class="price">
@@ -327,22 +204,60 @@
 <script type="text/ecmascript-6">
 import Swper from "../Swper/Swper.vue"
 import BScroll from 'better-scroll'
+import {mapState} from 'vuex'
   export default {
-      components:{
-          Swper
+		data(){
+			return{
+        isLogin:true,
+        isShow : true
+			}     
+		},
+		components:{
+			Swper
+		},
+		mounted(){
+      console.log(this.isPerson)           
+      let wrapper = document.querySelector('.wrapper')
+      let scroll = new BScroll(wrapper,{
+        pullUpLoad: true,
+        scrollX:true,
+        scrollY:false
+    })    
+    },
+    computed:{
+      ...mapState({
+        homeArr:state=>state.home.homeArr.policyDescList,
+        imgArr:state=>state.home.imgArr,
+        isPerson:state=>state.home.person.personalShop,
+        shop:state=>state.home.goShop,
+        isNewShop:state=>state.home.newShop.newItemList
+        
+    }) ,
+    first(){
+      return this.shop.flashSaleModule?this.shop.flashSaleModule.itemList:[];
+    },
+    flashSaleModule(){
+      if(this.isNewShop){
+        return this.isNewShop.flashSaleModule
+      }   
+    },
+    },
+    
+    methods:{
+      login(){
+        this.$router.push('person')		
       },
-       mounted(){           
-        let wrapper = document.querySelector('.wrapper')
-        let scroll = new BScroll(wrapper,{
-            pullUpLoad: true,
-            scrollX:true
-        })
-	}
+      del(){
+        this.$router.push('/search')
+		}
+	},
+	
 	}
 </script>
-<style lang="stylus" rel="stylesheet/stylus">
+<style lang="stylus" rel="stylesheet/stylus" scoped>
 @import "../../common/stylus/mixins.styl"
 	.header
+		position relative
 		width 100%
 		position fixed
 		top 0px 
@@ -371,7 +286,6 @@ import BScroll from 'better-scroll'
 					border-radius 5px
 					height 23px
 					background-color #eee
-					margin-left -100px
 					span 
 						display block
 						width 200px
@@ -398,29 +312,31 @@ import BScroll from 'better-scroll'
 						position absolute
 						top 4px
 						left 18px 
-		.nav
+		.nav			
 			display flex 
-			height 16px
-			width 100% 
+			width 70% 
 			justify-content space-around     
 			.tabWrap
 				display flex
-				margin -12px
+				margin -9px
 				background #fff
-				.active
+				&.active
 					color red
 					border-bottom 1px solid red
 				.navItem
-					width 100px
-					background red   
+					width 56px
 					font-size 14px
-					padding 16px    
-		.icon-xiala 
-			width 20px
-			height 20px
-			font-size 34px
-			color #999
-	.content  
+					padding 16px 
+			.kkk  		   
+				.icon-xiala 
+					position fixed
+					top 55px
+					right 22px
+					width 20px
+					height 20px
+					font-size 34px
+					color #999
+	.content
 		.swper
 			margin-top 63px
 			width 100%
@@ -451,11 +367,16 @@ import BScroll from 'better-scroll'
 			width 100%       
 			.shop-all
 				display flex
+				flex-wrap wrap
 				margin 9px
 				width 100%
 				height 70px
+				flex-wrap wrap
 				.shopItem 
-					width 20%     
+					width 20% 
+					flex-direction column
+					align-items center   
+					display flex
 					img 
 						width 60px
 						height 60px
@@ -495,27 +416,27 @@ import BScroll from 'better-scroll'
 				color #333
 				text-align left
 				margin: 8px 15px;
-				.personAll 
-					display flex 
-					.personItem 
-						margin 5px 
-						width 29%
-						.item 
-							background #eee
-							img 
-								height 115px
-							p
-								font-size 14px
-								text-align left 
-								.text
-									font-size 12px
-								.paric
-									font-size 12px
-									color red   
-				.kong
-					height 10px
-					width 100%
-					background #eee       
+			.personAll 
+				display flex 
+				.personItem 
+					margin 5px 
+					width 29%
+					.item 
+						background #eee
+						img 
+							height 115px
+						p
+							font-size 14px
+							text-align left 
+							.text
+								font-size 12px
+							.paric
+								font-size 12px
+								color red   
+			.kong
+				height 10px
+				width 100%
+				background #eee       
 		.time
 			width 100% 
 			display flex
@@ -543,25 +464,22 @@ import BScroll from 'better-scroll'
 					font-size 13px
 				.itemp
 					padding 1px 10px 
-		.photo
+		.photo 
 			.photoItem
 				display flex 
 				flex-wrap wrap
-				.item
-					margin 10px 9px
-					.price               
-						display flex 
-						margin 0 25px
-						p
-							color red 
-							font-size 15px 
-						del
-							font-size 12px
-							color #666     
-					img 
-						width 107px
-						height 107px
-						background #eee
+			.item
+				width 113px
+				height 120px
+				margin 5px 6px
+				.price
+					display flex 
+					color #333 
+					font-size 12px 					    
+			img 
+				width 107px
+				height 107px
+				background #eee
 			.kong
 				height 10px
 				width 100%

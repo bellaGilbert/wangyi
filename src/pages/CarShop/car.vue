@@ -3,7 +3,7 @@
       <div class="header">
 					<div class="up">
 						<div class="shop">购物车</div>
-						<div class="logo">领券</div>            
+						<div class="logo" @click="per">领券</div>            
 			   	</div>
 				  <ul class="down">
 						<li class="day">
@@ -13,7 +13,7 @@
 						<li class="day">
               <i class="iconfont icon-xiaoyuandian1"></i>
               <span>30天无忧退货</span>
-							</li>
+						</li>
 						<li class="day">
               <i class="iconfont icon-xiaoyuandian1"></i>
               <span>30天无忧退货</span>
@@ -23,13 +23,21 @@
      <div class="content">
         <i class="iconfont icon-dagouwuche"></i>
         <div class="add">去添加点什么吧</div>
-        <div class="btn">登录</div>
+        <div class="btn" @click="goTo">登录</div>
      </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   export default {
+    methods:{
+      goTo(){
+        this.$router.push('/person')
+      },
+      per(){
+        this.$router.push('./personF')
+      }
+   }
   }
 </script>
 

@@ -1,16 +1,23 @@
 <template>
   <div>
     <div class="header"> 
-      <div class="head">               
-          <i class="iconfont icon-xiaofangzi"></i>
-          <div>
+      <div class="head" > 
+        <a href="##" @click="glasses">
+           <i class="iconfont icon-xiaofangzi"></i>
+          </a> 
+         <div>
               <span class="find">发现</span>
               <span class="change">甄选家</span>
-          </div>                
-          <div>
-              <i class="iconfont icon-fangdajing2"></i>
-              <i class="iconfont icon-gouwuche"></i>
-          </div>               
+         </div>                
+        <div class="big">
+             <a href="##" @click="big('/search')">
+                <i class="iconfont icon-fangdajing2"></i>
+             </a>            
+              <a href="##" @click="shopping">
+                  <i class="iconfont icon-gouwuche"></i>
+              </a>
+              
+        </div>               
       </div>
       <div class="header-item">
           <div class="item">盛夏的特别版</div>
@@ -203,24 +210,46 @@
 </template>
 
 <script type="text/ecmascript-6">
+import { constants } from 'crypto'
   export default {
+    data(){
+      return{
+         isHouse:true 
+      }
+    },
+    methods:{
+      glasses(){
+        console.log('222')
+        this.$router.push('/first')
+      },  
+      shopping(){
+        console.log(3)
+        this.$router.push('/person')
+      },
+      big(path){
+        console.log(5)
+        this.$router.push(path)
+      } 
+    }
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
 .header
+  position relative
+  z-index 999
   width 100%
   background #fff
   .head
+    z-index 1000
     display flex
     justify-content space-between
     width 100%
     height 41px    	
     border-bottom 1px solid #eee
     position fixed
-    top 8px
-    // left -21px
-    .icon-gouwuche
+    top 0px
+   .icon-gouwuche
       margin-right 15px
     .iconfont
       font-size 27px
@@ -231,9 +260,11 @@
     .change	
       font-size 13px
       color #666
-  .header-item		  
+  .header-item
+    background #fff	
+    height 30px	  
     width 100%
-    padding 62px 0px
+    padding 60px 0px 10px 0
     display flex	
     justify-content space-around
     position fixed
@@ -247,7 +278,6 @@
       font-size 14px
       color #666
 .content
-  padding 85px 0px
   .green
     height 206px
     width 100%

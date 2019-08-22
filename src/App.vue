@@ -10,6 +10,16 @@ import Footer from './components/Footer/Footer.vue'
   export default {
      components:{
        Footer
+     },
+     mounted(){
+      //  提交首页中的数据
+      // console.log(this.$store)
+       this.$store.dispatch('getHomeData')
+       this.$store.dispatch('getSmallData')
+       this.$store.dispatch('getPersonData')
+       this.$store.dispatch('getShopData')
+       this.$store.dispatch('getNewData')
+      
      }
     }
 </script>

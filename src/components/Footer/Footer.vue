@@ -3,31 +3,31 @@
     <div class="line"></div>
         <ul class="footer-all">
            <router-link to="/first">
-            <li class="item">
+            <li class="item" :class="{on: $route.path==='/first'}">
                 <i class="iconfont icon-xiaofangzi"></i>
                 <span>首页</span>
             </li>
         </router-link>
          <router-link to="/card">
-            <li class="item">
+            <li class="item" :class="{on: $route.path==='/card'}">
                 <i class="iconfont icon-fenlei"></i>
                 <span>分类</span>
             </li>
          </router-link>
            <router-link to="/three">
-            <li class="item">
+            <li class="item" :class="{on: $route.path==='/three'}">
                 <i class="iconfont icon-shiwu"></i>
                 <span>实物</span>
             </li>
            </router-link>
             <router-link to="/car">
-                <li class="item">
-                    <i class="iconfont icon-gouwuche"></i>
-                    <span>购物车</span>
-               </li>
+              <li class="item" :class="{on: $route.path==='/car'}">
+                  <i class="iconfont icon-gouwuche"></i>
+                  <span>购物车</span>
+              </li>
             </router-link>
            <router-link to="/person"> 
-            <li class="item">
+            <li class="item" :class="{on: $route.path==='/person'}">
                 <i class="iconfont icon-gerenzhongxinwoderenwubiaozhuntoumianxing"></i>
                 <span>个人</span>                
             </li>
@@ -64,7 +64,9 @@
 				display flex             
 				flex-direction column    
 				width 44px
-				margin 0 18px    
+				margin 0 18px
+        &.on
+          color pink    
 				.iconfont
 					font-size 21px
 					color red
