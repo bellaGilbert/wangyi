@@ -12,50 +12,18 @@
     <div class="middle ">
            <div class="left wrapper">
              <ul class="more">
-               <li class="item" v-for="(item, index) in blacks" :key="index" >{{item.name}}</li>            
+               <li class="item" :class="{on:currentIndex===index}" v-for="(item, index) in blacks" :key="index" @click="currentIndex=index">{{item.name}}</li>            
             </ul>              
            </div>
           <div class="right">
-            <div class="photo" v-for="(item, index) in blacks" :key="index">
-              <img  class="up"  :src="item.bannerUrl" alt="">
+            <div class="photo">
+              <img  class="up" src="https://yanxuan.nosdn.127.net/5b4ca33a0205482398006405c1db15e8.jpg?imageView&thumbnail=0x196" alt="">
             </div>            
-            <ul class="content">
-                <li class="contentItem">                       
-                    <img  class="down" src="https://yanxuan.nosdn.127.net/6091911dc74d9968c54a50915c68f153.png?imageView&quality=85&thumbnail=144x144">
-                    <p>夏日母婴好物价</p>                                                     
-                </li>
-                <li class="contentItem">                       
-                    <img  class="down" src="https://yanxuan.nosdn.127.net/6091911dc74d9968c54a50915c68f153.png?imageView&quality=85&thumbnail=144x144">
-                    <p>夏日母婴好物价</p>                                                     
-                </li>
-                <li class="contentItem">                       
-                    <img  class="down" src="https://yanxuan.nosdn.127.net/6091911dc74d9968c54a50915c68f153.png?imageView&quality=85&thumbnail=144x144">
-                    <p>夏日母婴好物价</p>                                                     
-                </li>
-                <li class="contentItem">                       
-                    <img  class="down" src="https://yanxuan.nosdn.127.net/6091911dc74d9968c54a50915c68f153.png?imageView&quality=85&thumbnail=144x144">
-                    <p>夏日母婴好物价</p>                                                     
-                </li>
-                <li class="contentItem">                       
-                    <img  class="down" src="https://yanxuan.nosdn.127.net/6091911dc74d9968c54a50915c68f153.png?imageView&quality=85&thumbnail=144x144">
-                    <p>夏日母婴好物价</p>                                                     
-                </li>
-                <li class="contentItem">                       
-                    <img  class="down" src="https://yanxuan.nosdn.127.net/6091911dc74d9968c54a50915c68f153.png?imageView&quality=85&thumbnail=144x144">
-                        <p>夏日母婴好物价</p>                                                     
-                </li>
-                <li class="contentItem">                       
-                    <img  class="down" src="https://yanxuan.nosdn.127.net/6091911dc74d9968c54a50915c68f153.png?imageView&quality=85&thumbnail=144x144">
-                    <p>夏日母婴好物价</p>                                                     
-                </li>
-                 <li class="contentItem">                       
-                    <img  class="down" src="https://yanxuan.nosdn.127.net/6091911dc74d9968c54a50915c68f153.png?imageView&quality=85&thumbnail=144x144">
-                    <p>夏日母婴好物价</p>                                                     
-                </li>
-                 <li class="contentItem">                       
-                    <img  class="down" src="https://yanxuan.nosdn.127.net/6091911dc74d9968c54a50915c68f153.png?imageView&quality=85&thumbnail=144x144">
-                    <p>夏日母婴好物价</p>                                                     
-                </li>
+            <ul class="content" v-if="blacks[currentIndex]">
+                <li class="contentItem" v-for="(item, index) in blacks[currentIndex].subCateList" :key="index">                       
+                    <img  class="down" :src="item.wapBannerUrl">
+                        <p>{{item.name}}</p>                                                     
+                </li>               
             </ul>        
         </div>
      </div>
@@ -68,29 +36,40 @@ import BScroll from 'better-scroll'
 import {getSecond} from '../../api'
 import { mapState } from 'vuex';
   export default {
+    data () {
+      return {
+        currentIndex:0
+      } 
+    },
 	mounted(){
     console.log(this.isPerson)           
      new BScroll('.wrapper',{
       pullUpLoad: true,
       scrollX:false,
-      scrollY:true
+      scrollY:true,
+      click: true
     });
-    setTimeout(() => {
+    //setTimeout(() => {
        this.$store.dispatch('getSecond')
-      //  console.log()
-    }, 1000);
+    //}, 1000);
 
-     
   },
     computed:{
        ...mapState({
-         blacks:state=>state.second.black
+         blacks:state=>state.second.black,
+         
        }) 
     },
     methods:{
       toDo(){
         this.$router.push('/search')
-      }
+      },
+      
+      // saveIndex (index) {
+      //   this.currentIndex = index
+      //   console.log(index)
+
+      // }
     }
   }
 </script>
@@ -133,11 +112,13 @@ import { mapState } from 'vuex';
     width 320px
     height 528px
     .more
-      height:1000px
+      height:1000px     
       .item
         font-size 14px
         color #666
-        padding 15px 0px
+        padding 17px 24px
+        &.on
+          color red        
 	.right 
 		flex-direction column
 		.photo

@@ -49,17 +49,16 @@ import { mapState } from 'vuex';
     },
     computed:{
       ...mapState({
-         
+        searchArr:state=>state.categray.searchArr,
         reqRed:state=>state.categray.reqRed
       })
-    }
-    
+    }    
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scope>
 #app
-  padding-top 65px 
+  padding-top 1px 
   .header
     .head
       width 100%

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <Footer></Footer>
+    <Footer v-show="$route.meta.isShow"></Footer>
   </div>
 </template>
 
@@ -19,6 +19,7 @@ import Footer from './components/Footer/Footer.vue'
        this.$store.dispatch('getPersonData')
        this.$store.dispatch('getShopData')
        this.$store.dispatch('getNewData')
+       this.$store.dispatch('getThree')
       
      }
     }

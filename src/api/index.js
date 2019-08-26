@@ -14,6 +14,8 @@ export const reqRed = ()=>ajax(
 
 export const reqSecond = ()=>ajax.get('/mock/category/list')//第二页请求
 
+
+export const reqThree = () =>ajax.get(`${BASE}/topic/v1/find/recAuto.json`)//第三页请求接口数据
 // reqFirst().then((result)=>{
 //     console.log(result)
 // })

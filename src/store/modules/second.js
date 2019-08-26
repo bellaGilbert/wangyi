@@ -3,14 +3,16 @@ import {reqSecond} from '../../api'
 
 
 const state={
-   black:[]
+   black:[],
+   
 }
 const actions  = {
 	async getSecond({commit},data){
 		let result = await reqSecond(data)
+		
 		let datas= result.data
-		console.log(datas)
-		commit(GET_SECOND_DATA,datas)
+		// console.log(datas)
+		commit(GET_SECOND_DATA,datas)		
 	}
 	
 }
@@ -19,8 +21,7 @@ const actions  = {
 const mutations = {
 	[GET_SECOND_DATA](state,datas){
 		state.black = datas
-	
- }
+   },  
 }
 const getters ={
 

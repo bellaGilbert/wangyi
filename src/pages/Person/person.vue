@@ -22,25 +22,44 @@
         </div>
         <div class="phone" @click="number('/number')">
           <i class="iconfont icon-shouji"></i>
-          <span class="num">手机号快捷登录</span>
+          <span class="num">手机号快捷登录</span>         
         </div>
         <div class="mail" @click="email('/email')">
           <i class="iconfont icon-youxiang-copy"></i>
-          <span class="num">邮箱账号登录</span>
+          <span class="num">邮箱账号登录</span>          
         </div>
+    </div>
+    <div class="end">
+      <div class="item">
+        <i class="iconfont icon-weixin"></i>
+        <p class="wei">微信</p>
+        <span>|</span>
+      </div>
+       <div class="item">
+        <i class="iconfont icon-qq"></i>
+        <p class="qq">QQ</p>
+        <span>|</span>
+       </div>
+       <div class="item">
+        <i class="iconfont icon-weibo"></i>
+        <p class="bo">微博</p>
+       </div>
     </div>
   </div>
 </template>
 <script type="text/ecmascript-6">
 import Search from '../Search/Search'
+
   export default {
     data(){
       return{
         home :true,
-        isShop:true
+        isShop:true,
+        
     }
-    },
-     
+    },  
+  
+ 
     methods:{
       toGo(){
         console.log(123)
@@ -127,5 +146,14 @@ import Search from '../Search/Search'
      .iconfont
       font-size 20px
       padding 1px 12px
+.end
+  display flex
+  position absolute
+  bottom 56px
+  left 69px
+  .item
+    display flex
+    padding 5px 18px
+
 
 </style>

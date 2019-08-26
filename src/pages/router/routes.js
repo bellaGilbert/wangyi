@@ -6,15 +6,19 @@ import Three from '../Three/Three.vue'
 import Search from '../Search/Search.vue'
 import Number from '../Number/Number.vue'
 import Email from '../Email/Email.vue'
+import ChangeHome from "../ChangeHome/ChangeHome.vue"
 
 
 export default [
   {
       path:'/car',
-      component:CarShop
+      component:CarShop,
+      meta:{
+        isShow:true
+      }
   },
   {
-    path:'/first',
+    path:'/first/:id',
     component:First 
    },
    
@@ -37,13 +41,22 @@ export default [
   },
     
    {
-    path:'/three',
-    component:Three 
+    path:'/three/:id',
+    component:Three,
+    
+   },
+   {
+    path:"/changeHome",
+    component:ChangeHome
    },
    {
     path:'/search',
     component:Search
  },
+ {
+   path:"/",
+   redirect:"/first"
+ }
 ] 
 
 

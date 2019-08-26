@@ -7,7 +7,7 @@ import mutations from './mutations'
 import actions from './actions'
 import second from './modules/second'
 import getters from './getters'
-
+import three from './modules/three'
 // 声明使用vue插件
 Vue.use(Vuex)
 
@@ -20,6 +20,7 @@ export default new Vuex.Store({
   modules: {
     home,
     categray,
-    second
+    second,
+    three
   }
 })

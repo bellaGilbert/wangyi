@@ -18,28 +18,41 @@
 			</div> 
 			<!--横着导航  -->
 			<div class="nav wrapper">
-					<ul class="tabWrap ">
-							<li class="navItem active">推荐</li>  
-							<li class="navItem">家具生活</li>
-							<li class="navItem">服饰箱包</li>
-							<li class="navItem">美食酒水</li>
-							<li class="navItem">美食酒水</li>           
-							<li class="navItem">美食酒水</li>
-							<li class="navItem">美食酒水</li>            
-							<li class="navItem">美食酒水</li>
-							<li class="navItem">美食酒水</li> 
-					</ul>
-					<div class="kkk">
+				<ul class="tabWrap ">
+					<li class="navItem active" @click="toGo(index)"  v-for="(item, index) in arr" 
+					:key="index">{{item}}</li>  
+				</ul>
+					<div class="kkk" @click="show">
 						<i class="iconfont icon-xiala"></i>	
 					</div>					
-					<div class="ty" v-show="isShow">jjjjjjjjjjjjjj</div>
+					
 			</div>
+			<!--下拉框-->
+			<div class="up" v-show="isShower" @click="none">
+				<div class="one">
+				 <span>全部频道</span>
+					<i class="iconfont icon-shangsanjiao"></i>
+				</div>
+				<ul class="two">
+					<li class="three">推荐</li>
+					<li class="three">居家服饰</li>
+					<li class="three">服饰鞋包</li>
+					<li class="three">美食酒水</li>
+					<li class="three">个护清洁</li>
+					<li class="three">母婴亲子</li>
+					<li class="three">运动旅行</li>
+					<li class="three">数码家电</li>
+				</ul>
+			</div>
+		
+     
 	</div>
+	<div class="headerqq"></div>
 	<div class="content">       
 		<!--轮播图  -->
 				<Swper/> 
 		<!-- 三个标志 -->
-		<div class="grow">
+		<div class="grow ">
 				<ul class="grow-w" >
 						<li class="item" v-for="(item, index) in homeArr" :key="index">
 								<a href="##">
@@ -52,12 +65,12 @@
 		</div> 
 		<!-- 商品分类 -->
 		<div class="shop">
-				<ul class="shop-all" v-if="kingKongModule">
-						<li class="shopItem" v-for="(item, index) in kingKongModule.kingKongList" :key="index">							
-								<img :src="item.picUrl">
-								<span>{{item.text}}</span>
-						</li>				
-				</ul>
+			<ul class="shop-all">
+				<li class="shopItem" v-for="(item, index) in kingKongModule.kingKongModule.kingKongList" :key="index">							
+					<img :src="item.picUrl">
+					<span>{{item.text}}</span>
+				</li>				
+			</ul>
 		</div>  
 		<!-- 固定图片 -->
 		<div class="fixed">
@@ -198,7 +211,6 @@
 				</div>
 		</div>
 	</div>
-	
 </div>  
 </template>
 <script type="text/ecmascript-6">
@@ -208,8 +220,10 @@ import {mapState} from 'vuex'
   export default {
 		data(){
 			return{
-        isLogin:true,
-        isShow : true
+				isLogin:true,
+				arr:[],
+				isShower:false,
+				// isShow:true
 			}     
 		},
 		components:{
@@ -219,18 +233,21 @@ import {mapState} from 'vuex'
       console.log(this.isPerson)           
       let wrapper = document.querySelector('.wrapper')
       let scroll = new BScroll(wrapper,{
-        pullUpLoad: true,
+				pullUpLoad: true,
+				click:true,
         scrollX:true,
         scrollY:false
-    })    
+		}) ;
+		this.arr=["推荐","居家生活","服饰鞋包","美食酒水","个护清洁"]   
     },
     computed:{
       ...mapState({
         homeArr:state=>state.home.homeArr.policyDescList,
-        imgArr:state=>state.home.imgArr,
+        // imgArr:state=>state.home.imgArr,
         isPerson:state=>state.home.person.personalShop,
         shop:state=>state.home.goShop,
-        isNewShop:state=>state.home.newShop.newItemList
+				isNewShop:state=>state.home.newShop.newItemList,
+				kingKongModule:state=>state.home.imgArr
         
     }) ,
     first(){
@@ -249,6 +266,16 @@ import {mapState} from 'vuex'
       },
       del(){
         this.$router.push('/search')
+		},	
+		toGo(index){
+			console.log(index)
+      this.$router.replace(`/first/${index}`)
+		},
+		none(){
+			this.isShower = !this.isShower
+		},
+		show(){
+			this.isShower = !this.isShower
 		}
 	},
 	
@@ -336,7 +363,33 @@ import {mapState} from 'vuex'
 					height 20px
 					font-size 34px
 					color #999
+		.up
+			width 96%
+			position absolute
+			top 67px
+			left 15px
+			background #fff
+			.one
+				display flex
+				justify-content space-between
+				font-size 14px
+				.icon-shangsanjiao
+					font-size 30px
+			.two		 
+				display flex
+				flex-wrap wrap
+				.three 
+					border 1px solid #999
+					width 100px
+					height 24px
+					text-align center
+					line-height 24px
+					font-size 14px
+					margin 3px 2px
+	.headerqq
+		height 100px
 	.content
+		overflow hidden
 		.swper
 			margin-top 63px
 			width 100%
@@ -419,6 +472,7 @@ import {mapState} from 'vuex'
 			.personAll 
 				display flex 
 				.personItem 
+					display flex
 					margin 5px 
 					width 29%
 					.item 

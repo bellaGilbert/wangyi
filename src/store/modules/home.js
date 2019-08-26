@@ -20,7 +20,7 @@ const actions = {
   async getSmallData({commit}){
     let result = await reqFirst()
     const imgArr = result.data
-    // console.log(imgArr.kingKongModule)
+    console.log(imgArr.kingKongModule)
     commit(GET_SMALL_DATA,{imgArr})
   },
   async getPersonData({commit}){

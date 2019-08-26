@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="line"></div>
         <ul class="footer-all">
-           <router-link to="/first">
+           <router-link to="/first/0">
             <li class="item" :class="{on: $route.path==='/first'}">
                 <i class="iconfont icon-xiaofangzi"></i>
                 <span>首页</span>
@@ -14,7 +14,7 @@
                 <span>分类</span>
             </li>
          </router-link>
-           <router-link to="/three">
+           <router-link to="/three/0">
             <li class="item" :class="{on: $route.path==='/three'}">
                 <i class="iconfont icon-shiwu"></i>
                 <span>实物</span>

@@ -6,7 +6,7 @@
            <i class="iconfont icon-xiaofangzi"></i>
           </a> 
          <div>
-              <span class="find">发现</span>
+              <span class="find" @click="finded">发现</span>
               <span class="change" @click="home">甄选家</span>
          </div>                
         <div class="big">
@@ -15,20 +15,29 @@
              </a>            
               <a href="##" @click="shopping">
                   <i class="iconfont icon-gouwuche"></i>
-              </a>
-              
+              </a>              
         </div>               
       </div>
-      <div class="header-item">
-        <ul class="itemIndex">
-          <li class="item other" @click="toDo(index)" v-for="(item, index) in arr" :key="index">{{item}}</li>
+      <div class="header-item wrapper ">
+        <ul class="summer">
+          <li class="item other">盛夏的特别版</li>
+          <li class="other">推荐</li>
+          <li class="other">好货内部价</li>
+          <li class="other">回购榜</li>
+          <li class="other">晒单</li>
+          <li class="other">晒单</li>
+          <li class="other">晒单</li>
+          <li class="other">晒单</li>
+          <li class="other">晒单</li>
+          <li class="other">晒单</li>
+          <li class="other">晒单</li>
         </ul>
-       
+          
       </div>
     </div>
       <div class="content">
-        <img class="green" src="https://yanxuan.nosdn.127.net/15639572098632760.jpeg" alt="">  
-        <img class="gary" src="https://yanxuan.nosdn.127.net/15656868015315337.jpg?_width=750&_height=344" alt=""> 
+        <img class="green" src="https://yanxuan.nosdn.127.net/ef59ccf1b8c6cd7be7c5a206140c3f86.jpg?imageView&quality=75&thumbnail=670x371" alt="">  
+        <img class="gary" src="https://yanxuan.nosdn.127.net/5348c11e64e23f1d20cffc35f293cb4b.jpg?imageView&quality=75&thumbnail=670x371" alt=""> 
         <img class="blue" src="https://yanxuan.nosdn.127.net/15656886328485352.jpeg" alt="">
         <img class="tea" src="https://yanxuan.nosdn.127.net/15656878289625347.jpg" alt="">
         <ul class="itemHead">
@@ -210,51 +219,41 @@
 
 <script type="text/ecmascript-6">
 import BScroll from 'better-scroll'
- 
-  export default { 
+  export default {
     data(){
     return{
-        arr:[],
         isHouse:true 
      }
-  },
-   
-	mounted(){    
-    this.arr=["盛夏的天气","开发者日记","晒单","回购榜","达人","好货内部价"]
-    new BScroll('.wrapper',{
-      pullUpLoad: true,
-      scrollX:true,
-      scrollY:false,
-      click: true
-    });
-  },
-  
-  methods:{
-    glasses(){
-      console.log('222')
-      this.$router.push('/first')
-    },  
-    shopping(){
-      console.log(3)
-      this.$router.push('/person')
+   },
+    mounted(){
+      console.log(this.isPerson)           
+      this.$nextTick(()=>{
+        new BScroll('.wrapper',{
+          // pullUpLoad: true,
+          scrollX:true,
+          scrollY:false,
+          click: true
+        });  
+      })
     },
-    big(path){
-      console.log(5)
-      this.$router.push(path)
-    },
-    home(){
-      this.$router.push('/changeHome')
-    },
-    toDo(index){
-      this.$router.replace(`/three/${index}`)  
+    methods:{
+      glasses(){
+        this.$router.push('/first')
+      },  
+      shopping(){
+        this.$router.push('/person')
+      },
+      big(path){
+        this.$router.push(path)
+      },
+      home(){
+        this.$router.push('/changeHome')
+      } ,
+      finded(){
+        this.$router.push('/three')
+      }
     }
-    // changeindex(index){
-    //   this.$router.replace(`/three/${index}`)
-    // }
-   
-    } 
   }
-
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
@@ -277,14 +276,13 @@ import BScroll from 'better-scroll'
     .iconfont
       font-size 27px
     .find
+       font-size 13px
+      color #666
+    .change
       font-size 21px
       font-weight 700
-      color #b4282d
-    .change	
-      font-size 13px
-      color #666
+      color red	      
   .header-item
-    z-index 100
     background #fff	
     height 30px	  
     width 100%
@@ -294,42 +292,42 @@ import BScroll from 'better-scroll'
     position fixed
     top 0
     left 0
-    .itemIndex
+    zindex 99
+    .summer
       width 600px
       display flex
+      justify-content space-around  
+      white-space nowrap   
       .item
-        width 80px
-        font-size 14px
-        color red
-        padding 0px 6px
+      font-size 14px
+      color red
+      padding 0px 6px
       .other
+        padding 1px 10px
         font-size 14px
         color #666
-        width 100px
-        height 30px
-        box-sizing border-box
-.content
-  .green
-    height 206px
-    width 100%
-  .gary
-    height 170px
-    width 100%
-  .blue
-    height 91px		
-    width 100%
-  .tea
-    height 215px
-    width 100%
-  .itemHead
-    width 100%
-    display flex
-    .itemImg	
-      .small
-        height 72px
-        width 72px
-        border-radius 15px
-        padding 5px 2px
+    .content
+      .green
+        height 206px
+        width 100%
+      .gary
+        height 170px
+        width 100%
+      .blue
+        height 91px		
+        width 100%
+      .tea
+        height 215px
+        width 100%
+      .itemHead
+        width 100%
+        display flex
+        .itemImg	
+          .small
+            height 72px
+            width 72px
+            border-radius 15px
+            padding 5px 2px
   .skyblue
     width 100%
     height 82px 
@@ -396,3 +394,4 @@ import BScroll from 'better-scroll'
 	height 90px	     
 
 </style>
+

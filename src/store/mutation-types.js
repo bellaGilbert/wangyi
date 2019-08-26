@@ -6,3 +6,5 @@ export const GET_NEW_DATA ="get_new_data"
 export const GET_SEARCH_DATA ="get_search_data"
 export const GET_RED_DATA ="get_red_data"
 export const GET_SECOND_DATA="get_second_data"
+export const GET_THREE_DATA ="get_three_data"
+
